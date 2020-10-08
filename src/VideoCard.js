@@ -3,7 +3,7 @@ import React from 'react'
 const VideoCard = ({video, onVideoSelect}) => {    
     return (
         <div className="video-item item" onClick={() => onVideoSelect(video)}>
-            <img className="ui image" key={video.id.videoId} src={video.snippet.thumbnails.medium.url} />
+            <img className="ui image" key={video.id.videoId} alt={video.snippet.description} src={video.snippet.thumbnails.medium.url} />
             <div className="content">
                 {
                     video.snippet.description

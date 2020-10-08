@@ -1,12 +1,17 @@
-import { render } from '@testing-library/react'
 import React from 'react'
 
 const VideoDetail = ({video}) => {
+    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
     const renderedList = () => {
         if(!video){
             return <div>Loading...</div>
         }
-        return <div>{video.snippet.title}</div>        
+        return <div>
+            <iframe src={videoSrc} ></iframe>
+            {
+                video.snippet.title
+            }
+            </div>        
     }
     return (
         <div>
