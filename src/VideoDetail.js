@@ -1,11 +1,11 @@
 import React from 'react'
 
 const VideoDetail = ({video}) => {
-    const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
     const renderedList = () => {
         if(!video){
             return <div>Loading...</div>
         }
+        const videoSrc = `https://www.youtube.com/embed/${video.id.videoId}`
         return <div>
             <iframe src={videoSrc} ></iframe>
             {
