@@ -1,10 +1,14 @@
 import React from 'react'
 
-const VideoCard = (props) => {
-    
+const VideoCard = ({video, onVideoSelect}) => {    
     return (
-        <div>
-            {<img key={props.video.id.videoId} title = "kk" src={props.video.snippet.thumbnails.medium.url} />}
+        <div className="video-item item" onClick={() => onVideoSelect(video)}>
+            <img className="ui image" key={video.id.videoId} src={video.snippet.thumbnails.medium.url} />
+            <div className="content">
+                {
+                    video.snippet.description
+                }
+            </div>
         </div>
     )
 }
